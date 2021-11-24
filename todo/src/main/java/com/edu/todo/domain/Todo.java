@@ -37,7 +37,8 @@ public class Todo implements Serializable
 	
 	@Column(nullable = false)
 	private LocalDateTime dataParaFinalizar;
+	
 	/*No momento que inicia, não podemos já começar como finalizado*/
-	@Column(nullable = false)
-	private Boolean finalizado = false;
+	@Column(columnDefinition = "boolean default false", nullable = false)
+	private Boolean finalizado;
 }
