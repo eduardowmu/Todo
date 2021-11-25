@@ -1,18 +1,12 @@
 package com.edu.todo;
-
-
-
 //import java.time.LocalDateTime;
 //import java.time.format.DateTimeFormatter;
-
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 //import com.edu.todo.domain.Todo;
 //import com.edu.todo.repository.TodoRepository;
-
 @SpringBootApplication
 public class TodoApplication //implements CommandLineRunner
 {	//@Autowired private TodoRepository repository;
