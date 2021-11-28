@@ -16,10 +16,10 @@ public class TestConfig
 	public TestConfig(DbService service) {this.service = service;}
 	
 	/*Essa notação identifica que esse método será executado sempre que uma
-	 *nova instância do teste for iniciada.
+	 *nova instância do teste for iniciada.*/
 	@Bean
 	public boolean instancia() 
 	{	this.service.save();
 		return true;
-	}*/
+	}
 }

@@ -1,13 +1,15 @@
 package com.edu.todo.domain;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -39,8 +41,9 @@ public class Todo implements Serializable
 	@Column(nullable = false)
 	private String descricao;
 	
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	@Column(nullable = false)
-	private LocalDateTime dataParaFinalizar;
+	private Date dataParaFinalizar;
 	
 	/*No momento que inicia, não podemos já começar como finalizado*/
 	@Column(columnDefinition = "boolean default false", nullable = false)

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,7 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.edu.todo.domain.Todo;
 import com.edu.todo.service.DbService;
-
+/*Nossa API nesse endpoint /todo podemos receber requisições
+ *de multiplas fontes, uma vez que estamos criando frontend
+ *que roda na porta 4200, ou seja, a requisição se origina
+ *de uma porta diferente. Se não colocarmos essa exceção, irá
+ *ocorrer um erro de CORS quando fizermos a requisiçção direto
+ *do frontend*/
+@CrossOrigin("*")
 @RestController
 @RequestMapping(value="/todo")
 public class TodoController 

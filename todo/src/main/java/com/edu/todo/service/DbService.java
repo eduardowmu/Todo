@@ -1,5 +1,8 @@
 package com.edu.todo.service;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,15 +41,20 @@ public class DbService
 	}
 	
 	public void delete(Long id) {this.repository.deleteById(id);}
-	/*
+	
 	public void save()
-	{	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+	{	DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 		Todo t1 = Todo.builder()
-				.titulo("Todo")
+				.titulo("Todo novo")
 				.descricao("Criação de nova entidade Todo 2")
-				.dataParaFinalizar(LocalDateTime.parse("25/11/2021 11:40", formatter))
+				.dataParaFinalizar(this.formatDate(formatter, "27/11/2021"))
 				.finalizado(false).build();
 	
 		this.repository.save(t1);
-	}*/
+	}
+	
+	private Date formatDate(DateFormat formatter, String data)
+	{	try	{return formatter.parse(data);} 
+		catch(Exception e) {return new Date();}
+	}
 }
