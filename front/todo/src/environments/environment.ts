@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  /*URL que vai receber o endpoint do backend da controller*/
+  baseUrl: 'http://localhost:8080/todo'
 };
 
 /*
