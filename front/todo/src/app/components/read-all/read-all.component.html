@@ -28,7 +28,9 @@
                     aria-label="Example icon button with a menu icon">
                     <mat-icon>edit</mat-icon>
                 </button>
-                <button mat-mini-fab color="warn" 
+                <!--Ao clicar o botão de evento deletar, o método irá 
+                    esperar o ID-->
+                <button (click)="delete(item.id)" mat-mini-fab color="warn" 
                     aria-label="Example icon button with a menu icon">
                     <mat-icon>delete</mat-icon>
                 </button>

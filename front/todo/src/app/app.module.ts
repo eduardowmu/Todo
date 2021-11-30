@@ -15,6 +15,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 //badge: https://material.angular.io/components/badge/api
 import {MatBadgeModule} from '@angular/material/badge';
+//snackbar: https://material.angular.io/components/snack-bar/api
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { FooterComponent } from './components/footer/footer.component';
 import { ReadAllComponent } from './components/read-all/read-all.component';
@@ -36,6 +38,7 @@ import { ReadAllComponent } from './components/read-all/read-all.component';
     MatIconModule,
     HttpClientModule,
     MatBadgeModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
