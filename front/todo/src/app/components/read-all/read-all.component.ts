@@ -14,6 +14,9 @@ export class ReadAllComponent implements OnInit {
   /*Instanciando uma classe de Todo*/
   list: Todo[] = []
 
+  /*lista de tarefas já finalizadas*/
+  finishedList: Todo[] = [];
+
   /*Temos uma instancia de TodoService*/
   constructor(private service: TodoService) { }
 
@@ -25,16 +28,27 @@ export class ReadAllComponent implements OnInit {
 
   findAll():void {
     this.service.findAll().subscribe((resposta) => {
+      resposta.forEach(todo => {
+        if(todo.finalizado) {
+          this.finishedList.push(todo); 
+        } else {
+          this.list.push(todo);
+        }
+      })
+      this.closed = this.finishedList.length;
+      /*
       this.list = resposta;
       this.countClosed();
+      */
     })
   }
 
+  /*
   countClosed():void {
     for(let todo of this.list) {
       if(todo.finalizado) {
         this.closed++;
       }
     }
-  }
+  }*/
 }
