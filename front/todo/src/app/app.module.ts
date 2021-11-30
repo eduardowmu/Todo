@@ -13,6 +13,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 //import da API do icon: https://material.angular.io/components/icon/api
 import {MatIconModule} from '@angular/material/icon';
+//badge: https://material.angular.io/components/badge/api
+import {MatBadgeModule} from '@angular/material/badge';
 
 import { FooterComponent } from './components/footer/footer.component';
 import { ReadAllComponent } from './components/read-all/read-all.component';
@@ -33,6 +35,7 @@ import { ReadAllComponent } from './components/read-all/read-all.component';
     MatButtonModule,
     MatIconModule,
     HttpClientModule,
+    MatBadgeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,6 +8,9 @@ import { TodoService } from 'src/app/services/todo.service'
   styleUrls: ['./read-all.component.css']
 })
 export class ReadAllComponent implements OnInit {
+  /*indicando quantidade de tipo Todo's estão fechados*/
+  closed = 0
+  
   /*Instanciando uma classe de Todo*/
   list: Todo[] = []
 
@@ -23,6 +26,15 @@ export class ReadAllComponent implements OnInit {
   findAll():void {
     this.service.findAll().subscribe((resposta) => {
       this.list = resposta;
+      this.countClosed();
     })
+  }
+
+  countClosed():void {
+    for(let todo of this.list) {
+      if(todo.finalizado) {
+        this.closed++;
+      }
+    }
   }
 }
