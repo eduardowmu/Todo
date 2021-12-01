@@ -5,7 +5,7 @@
         </button>    
     </div>
     <button class="novo-todo mat-elevation-z8" 
-      mat-stroked-button color="primary">Read All
+      mat-stroked-button color="primary">New Todo
     </button>
     <!--ngFor para cada item de objeto de Todo-->
     <div class="content" *ngFor="let item of list">
@@ -20,7 +20,7 @@
             <!--Div que irá receber as ações da request-->
             <div class="actions">
                 <!--inserindo novos botões-->
-                <button mat-mini-fab color="primary" 
+                <button (click)="finalizar(item)" mat-mini-fab color="primary" 
                     aria-label="Example icon button with a menu icon">
                     <mat-icon>done</mat-icon>
                 </button>

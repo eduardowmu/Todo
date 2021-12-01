@@ -16,6 +16,11 @@ export class TodoService {
     return this.http.get<Todo[]>(this.baseUrl);
   }
 
+  update(todo: Todo): Observable<Todo> {
+    const url = `${this.baseUrl}/update`
+    return this.http.put<Todo>(url, todo);
+  }
+
   /**Método que irá deletar um Todo através do ID */
   delete(id: any):Observable<void> {
     /**constante que recebe o path para deleção */

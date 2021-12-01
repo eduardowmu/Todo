@@ -60,6 +60,19 @@ export class ReadAllComponent implements OnInit {
     this.router.navigate(['finalizados']);
   }
 
+  finalizar(item: Todo):void {
+    item.finalizado = true;
+    /**Após feito o método update, será feito um
+     *arow function para exibir a mensagem e 
+     incrementar a quantidade de tasks atualizadas 
+     */
+    this.service.update(item).subscribe(() => {
+      this.service.message('Task finalizada com sucesso!');
+      this.list = this.list.filter(todo => todo.id === item.id);
+      this.closed++;
+    });
+  }
+
   /*
   countClosed():void {
     for(let todo of this.list) {
