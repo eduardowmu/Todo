@@ -17,10 +17,19 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatBadgeModule} from '@angular/material/badge';
 //snackbar: https://material.angular.io/components/snack-bar/api
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+//FormsModule do angula: 
+import { FormsModule } from '@angular/forms';
+//inputs: https://material.angular.io/components/input/api
+import {MatInputModule} from '@angular/material/input';
+//datepicker: https://material.angular.io/components/datepicker/api
+import {MatDatepickerModule} from '@angular/material/datepicker';
+//api para funcionar o modulo acima
+import { MatNativeDateModule } from '@angular/material/core';
 
 import { FooterComponent } from './components/footer/footer.component';
 import { ReadAllComponent } from './components/read-all/read-all.component';
 import { FinalizadosComponent } from './components/finalizados/finalizados.component';
+import { CreateComponent } from './components/create/create.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +38,7 @@ import { FinalizadosComponent } from './components/finalizados/finalizados.compo
     FooterComponent,
     ReadAllComponent,
     FinalizadosComponent,
+    CreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +51,10 @@ import { FinalizadosComponent } from './components/finalizados/finalizados.compo
     HttpClientModule,
     MatBadgeModule,
     MatSnackBarModule,
+    FormsModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

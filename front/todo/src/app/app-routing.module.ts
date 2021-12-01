@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CreateComponent } from './components/create/create.component';
 import { FinalizadosComponent } from './components/finalizados/finalizados.component';
 import { ReadAllComponent } from './components/read-all/read-all.component';
 /**Em nossas rotas, iremos configurar a renderização das
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'finalizados',
     component: FinalizadosComponent
+  },
+  {
+    path: 'novo',
+    component: CreateComponent
   }
 ];
 
