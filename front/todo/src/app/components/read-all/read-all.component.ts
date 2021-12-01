@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Todo } from 'src/app/models/todo';
 import { TodoService } from 'src/app/services/todo.service'
 
@@ -18,7 +19,7 @@ export class ReadAllComponent implements OnInit {
   finishedList: Todo[] = [];
 
   /*Temos uma instancia de TodoService*/
-  constructor(private service: TodoService) { }
+  constructor(private service: TodoService, private router:Router) { }
 
   /*Toda vez que minha aplicação iniciar, quero chamar
   o seguinte serviço*/
@@ -49,8 +50,14 @@ export class ReadAllComponent implements OnInit {
       if(resposta === null) {
         this.service.message('Task deletada com sucesso!');
         this.list = this.list.filter(todo => todo.id !== id);
+      } else {
+        this.service.message('Erro interno, favor tente novamente');
       }
     })
+  }
+
+  goToFinishTask():void {
+    this.router.navigate(['finalizados']);
   }
 
   /*
