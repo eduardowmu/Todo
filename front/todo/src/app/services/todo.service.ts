@@ -22,6 +22,14 @@ export class TodoService {
     return this.http.get<Todo[]>(this.baseUrl);
   }
 
+  /**Metodo que ira buscar um objeto Todo do read-all.component
+   * pelo ID do objeto selecionado
+   */
+  findById(id: any): Observable<Todo> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.http.get<Todo>(url);
+  } 
+
   update(todo: Todo): Observable<Todo> {
     const url = `${this.baseUrl}/update`;
     return this.http.put<Todo>(url, todo);

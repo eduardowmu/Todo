@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CreateComponent } from './components/create/create.component';
 import { FinalizadosComponent } from './components/finalizados/finalizados.component';
 import { ReadAllComponent } from './components/read-all/read-all.component';
+import { UpdateComponent } from './components/update/update.component';
 /**Em nossas rotas, iremos configurar a renderização das
  *tasks finalizadas.
  */
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'novo',
     component: CreateComponent
+  },
+  {
+    path: 'atualizar',
+    component: UpdateComponent
   }
 ];
 

@@ -30,6 +30,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ReadAllComponent } from './components/read-all/read-all.component';
 import { FinalizadosComponent } from './components/finalizados/finalizados.component';
 import { CreateComponent } from './components/create/create.component';
+import { UpdateComponent } from './components/update/update.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { CreateComponent } from './components/create/create.component';
     ReadAllComponent,
     FinalizadosComponent,
     CreateComponent,
+    UpdateComponent,
   ],
   imports: [
     BrowserModule,
