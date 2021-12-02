@@ -60,6 +60,10 @@ export class ReadAllComponent implements OnInit {
     this.router.navigate(['finalizados']);
   }
 
+  goToCreateNew():void {
+    this.router.navigate(['novo']);
+  }
+
   finalizar(item: Todo):void {
     item.finalizado = true;
     /**Após feito o método update, será feito um

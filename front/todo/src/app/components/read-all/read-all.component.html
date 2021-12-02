@@ -4,7 +4,7 @@
             matBadge="{{closed}}">Finished tasks
         </button>    
     </div>
-    <button class="novo-todo mat-elevation-z8" 
+    <button (click)="goToCreateNew()" class="novo-todo mat-elevation-z8" 
       mat-stroked-button color="primary">New Todo
     </button>
     <!--ngFor para cada item de objeto de Todo-->

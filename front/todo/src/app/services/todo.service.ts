@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { Todo } from '../models/todo';
 import { Observable } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
+//import { url } from 'inspector';
 
 @Injectable({providedIn: 'root'})
 export class TodoService {
@@ -12,12 +13,17 @@ export class TodoService {
 
   constructor(private http:HttpClient, private snackbar:MatSnackBar) { }
 
+  create(todo: Todo): Observable<Todo> {
+    const url = `${this.baseUrl}/new`;
+    return this.http.post<Todo>(url, todo);
+  }
+
   findAll(): Observable<Todo[]> {
     return this.http.get<Todo[]>(this.baseUrl);
   }
 
   update(todo: Todo): Observable<Todo> {
-    const url = `${this.baseUrl}/update`
+    const url = `${this.baseUrl}/update`;
     return this.http.put<Todo>(url, todo);
   }
 

@@ -5,6 +5,6 @@ export interface Todo {
     /*ao contrário do anterior, este é obrigatório*/
     titulo: String,
     descricao: String,
-    dataParaFinalizar: Date,
+    dataParaFinalizar: any,
     finalizado: Boolean
 }

@@ -31,7 +31,7 @@ public class TodoController
 	@Autowired
 	public TodoController(DbService service) {this.service = service;}
 	
-	@PostMapping("new")
+	@PostMapping("/new")
 	public ResponseEntity<Todo> save(@RequestBody Todo todo)
 	{return ResponseEntity.ok(this.service.save(todo));}
 
@@ -39,11 +39,11 @@ public class TodoController
 	public ResponseEntity<Todo> findById(@PathVariable Long id)
 	{return ResponseEntity.ok(this.service.findById(id));}
 	
-	@GetMapping(value="open")
+	@GetMapping(value="/open")
 	public ResponseEntity<List<Todo>> listOpen() 
 	{return ResponseEntity.ok(this.service.listOpen());}
 	
-	@GetMapping(value="close")
+	@GetMapping(value="/close")
 	public ResponseEntity<List<Todo>> listClose()
 	{return ResponseEntity.ok(this.service.listClose());}
 	
