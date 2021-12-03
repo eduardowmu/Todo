@@ -23,7 +23,8 @@ export class UpdateComponent implements OnInit {
    * buscar os dados do Todo selecionado em read-all.component
    */
   ngOnInit(): void {
-    
+    this.todo.id = this.route.snapshot.paramMap.get("id")!;
+    this.findById();
   }
 
   findById(): void {
@@ -34,8 +35,11 @@ export class UpdateComponent implements OnInit {
 
   update(item : Todo):void {
     this.dateFormat();
+    this.service.update(item).subscribe((resposta) => {
+      this.service.message("Tarefa atualizada com sucesso");
+      this.router.navigate(['']);
+    }, error => this.service.message("Erro ao atualizar tarefa"));
     
-    this.router.navigate(['']);
   }
 
   dateFormat(): void {

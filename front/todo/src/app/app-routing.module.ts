@@ -23,7 +23,7 @@ const routes: Routes = [
     component: CreateComponent
   },
   {
-    path: 'atualizar',
+    path: 'atualizar/:id',
     component: UpdateComponent
   }
 ];

@@ -45,7 +45,7 @@ public class TodoController
 	
 	@GetMapping(value="/close")
 	public ResponseEntity<List<Todo>> listClose()
-	{return ResponseEntity.ok(this.service.listClose());}
+	{return ResponseEntity.ok(this.service.listClose());} 
 	
 	@GetMapping
 	public ResponseEntity<List<Todo>> findAll()
